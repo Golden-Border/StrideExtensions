@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <StrideVersion>4.3.0.2507</StrideVersion>
+  </PropertyGroup>
+
+  <ItemGroup Label="Stride">
+    <PackageVersion Include="Stride.Core.Assets.CompilerApp" Version="$(StrideVersion)" />
+    <PackageVersion Include="Stride.Engine"                  Version="$(StrideVersion)" />
+    <PackageVersion Include="Stride.Navigation"              Version="$(StrideVersion)" />
+    <PackageVersion Include="Stride.Particles"               Version="$(StrideVersion)" />
+    <PackageVersion Include="Stride.Physics"                 Version="$(StrideVersion)" />
+    <PackageVersion Include="Stride.UI"                      Version="$(StrideVersion)" />
+    <PackageVersion Include="Stride.Video"                   Version="$(StrideVersion)" />
+  </ItemGroup>
+
+  <ItemGroup Label="Build Tools">
+    <!-- Override the Microsoft.Build.Tasks.Core version pulled in transitively by Stride to fix CVEs -->
+    <PackageVersion Include="Microsoft.Build.Tasks.Core"     Version="18.4.0" />
+    <PackageVersion Include="Microsoft.Build.Utilities.Core" Version="18.4.0" />
+  </ItemGroup>
+
+</Project>

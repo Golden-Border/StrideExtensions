@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Stride.Engine" />
+
+    <PackageReference Include="Stride.Video" />
+    <PackageReference Include="Stride.Physics" />
+    <PackageReference Include="Stride.Navigation" />
+    <PackageReference Include="Stride.Particles" />
+    <PackageReference Include="Stride.UI" />
+
+    <PackageReference Include="Stride.Core.Assets.CompilerApp" IncludeAssets="build;buildTransitive" />
+
+    <!-- Override vulnerable transitive dependency to fix GHSA-h4j7-5rxr-p4wc and GHSA-w3q9-fxm7-j8fq -->
+    <PackageReference Include="Microsoft.Build.Tasks.Core" PrivateAssets="all" IncludeAssets="build;buildTransitive" />
+  </ItemGroup>
+</Project>

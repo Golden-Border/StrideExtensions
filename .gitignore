@@ -18,6 +18,7 @@
 mono_crash.*
 
 # Build results
+[Bb]in/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -416,3 +417,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# AI Agents
+.claude

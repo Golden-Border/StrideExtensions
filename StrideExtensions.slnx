@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="StrideExtensionsDemo.Windows/StrideExtensionsDemo.Windows.csproj" />
+  <Project Path="StrideExtensionsDemo/StrideExtensionsDemo.csproj" />
+</Solution>
