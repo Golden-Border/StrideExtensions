@@ -6,6 +6,10 @@ Self-occlusion is suppressed via the stencil buffer: the entity's own pixels are
 
 ![Occlusion Silhouette](docs/img/OcclusionSilhouette.png)
 
+## Install
+
+Add the `GoldenBorder.StrideOcclusionSilhouette` package to your project via NuGet.
+
 ## Setup
 
 ### 1. Graphics Compositor
