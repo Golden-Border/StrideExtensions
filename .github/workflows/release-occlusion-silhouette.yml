@@ -1,0 +1,42 @@
+name: Release OcclusionSilhouette
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version (e.g. 1.0.0 or 1.0.0-rc.1)"
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.x"
+
+      - name: Build & Pack
+        run: >
+          dotnet pack StrideOcclusionSilhouette/StrideOcclusionSilhouette.csproj
+          -c Release
+          -p:Version=${{ inputs.version }}
+          --output ./nupkg
+
+      - name: Push to NuGet.org
+        run: >
+          dotnet nuget push ./nupkg/*.nupkg
+          --source https://api.nuget.org/v3/index.json
+          --api-key ${{ secrets.NUGET_API_KEY }}
+          --skip-duplicate
+
+      - name: Tag commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag "occlusion-silhouette/v${{ inputs.version }}"
+          git push origin "occlusion-silhouette/v${{ inputs.version }}"

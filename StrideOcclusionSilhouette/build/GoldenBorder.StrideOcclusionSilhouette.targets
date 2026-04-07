@@ -1,0 +1,19 @@
+<Project>
+  <!--
+    This file is automatically imported by NuGet into every project that references
+    GoldenBorder.StrideOcclusionSilhouette. It links the bundled SDSL/SDFX shader
+    files into the consuming project's build so that Stride's asset compiler can
+    discover and compile them (resolves E1202 "mixin not in module").
+
+    $(MSBuildThisFileDirectory) always points to this file's directory inside the
+    NuGet package cache, so the Include paths are stable regardless of where the
+    package is installed.
+  -->
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Effects\**\*.sdsl"
+          Link="Effects\%(RecursiveDir)%(Filename)%(Extension)"
+          Generator="StrideShaderKeyGenerator" />
+    <None Include="$(MSBuildThisFileDirectory)Effects\**\*.sdfx"
+          Link="Effects\%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

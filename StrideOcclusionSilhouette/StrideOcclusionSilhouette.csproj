@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -7,8 +7,43 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>GoldenBorder.StrideOcclusionSilhouette</PackageId>
+    <Version>1.0.0-rc.1</Version>
+    <Authors>Golden Border</Authors>
+    <Description>Renders a flat-colored silhouette for entities hidden behind other geometry in Stride. Supports animated and skinned meshes.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/Golden-Border/StrideExtensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Golden-Border/StrideExtensions.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>stride;stride3d;gamedev;silhouette;rendering;extension</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- CA2255 fires on Stride's auto-generated ModuleInitializer in obj/ which we cannot modify -->
+    <NoWarn>$(NoWarn);CA2255</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Stride.Engine" />
+  </ItemGroup>
+
+  <!-- Readme shown on NuGet.org -->
+  <ItemGroup>
+    <None Include="Readme.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- The .targets file is auto-imported by NuGet into every consuming project.
+       It links the shader files so Stride's asset compiler can discover them. -->
+  <ItemGroup>
+    <None Include="build\GoldenBorder.StrideOcclusionSilhouette.targets"
+          Pack="true" PackagePath="build\" />
+  </ItemGroup>
+
+  <!-- Shader files are placed next to the .targets file so $(MSBuildThisFileDirectory)
+       in the .targets resolves to their correct location in the NuGet package cache. -->
+  <ItemGroup>
+    <None Include="Effects\**\*.sdsl;Effects\**\*.sdfx"
+          Pack="true" PackagePath="build\Effects\" />
   </ItemGroup>
 
 </Project>
