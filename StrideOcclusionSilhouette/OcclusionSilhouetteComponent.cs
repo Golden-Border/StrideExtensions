@@ -15,7 +15,7 @@ namespace StrideOcclusionSilhouette;
 /// list in the Graphics Compositor.
 /// </para>
 /// <para>
-/// The entity's <see cref="Rendering.RenderGroup"/> must match the <c>RenderGroup</c> configured on the
+/// The entity's <see cref="Stride.Rendering.RenderGroup"/> must match the <c>RenderGroup</c> configured on the
 /// <c>OcclusionSilhouetteRenderFeature</c> for the silhouette to be rendered.
 /// </para>
 /// </remarks>

@@ -54,13 +54,13 @@ public class OcclusionSilhouetteRenderFeature : SubRenderFeature
     /// to prevent self-occlusion in the silhouette pass.
     /// </summary>
     [DataMember(20)]
-    public RenderStage OpaqueRenderStage { get; set; }
+    public RenderStage? OpaqueRenderStage { get; set; }
 
     /// <summary>
     /// Gets or sets the silhouette render stage. This stage must use <c>OcclusionSilhouetteEffect</c> as its effect name.
     /// </summary>
     [DataMember(30)]
-    public RenderStage SilhouetteRenderStage { get; set; }
+    public RenderStage? SilhouetteRenderStage { get; set; }
 
     /// <inheritdoc/>
     public override void Extract()

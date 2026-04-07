@@ -11,6 +11,7 @@ namespace StrideOcclusionSilhouette
     /// </summary>
     public static partial class OcclusionSilhouetteShaderKeys
     {
+        /// <summary>The RGBA color of the silhouette, passed to the shader as a <see cref="Vector4"/>.</summary>
         public static readonly ValueParameterKey<Vector4> SilhouetteColor = ParameterKeys.NewValue<Vector4>();
     }
 }
