@@ -1,0 +1,8 @@
+!Texture
+Id: 94ac8a13-d8ba-4f04-b85d-17d8d8c2e489
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Bottom_Diffuse.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

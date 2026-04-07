@@ -1,0 +1,8 @@
+!Texture
+Id: 2ba3b074-e554-453b-a768-db0d2bb938c6
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Shoes_Specular.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

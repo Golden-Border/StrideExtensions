@@ -1,0 +1,8 @@
+!Texture
+Id: 37e9da4d-6278-48d3-80f4-b060613d876b
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Hair_Gloss.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

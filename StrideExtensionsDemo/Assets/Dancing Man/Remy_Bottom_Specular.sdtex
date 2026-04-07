@@ -1,0 +1,8 @@
+!Texture
+Id: 444664f3-857b-4405-a5d0-f56aa791aca5
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Bottom_Specular.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

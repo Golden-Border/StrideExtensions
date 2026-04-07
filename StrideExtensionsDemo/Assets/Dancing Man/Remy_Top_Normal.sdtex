@@ -1,0 +1,8 @@
+!Texture
+Id: 967012a1-5345-41f6-9593-29329c8a525f
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Top_Normal.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

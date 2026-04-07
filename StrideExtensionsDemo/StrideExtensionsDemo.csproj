@@ -18,4 +18,8 @@
     <!-- Override vulnerable transitive dependency to fix GHSA-h4j7-5rxr-p4wc and GHSA-w3q9-fxm7-j8fq -->
     <PackageReference Include="Microsoft.Build.Tasks.Core" PrivateAssets="all" IncludeAssets="build;buildTransitive" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StrideOcclusionSilhouette\StrideOcclusionSilhouette.csproj" />
+  </ItemGroup>
 </Project>

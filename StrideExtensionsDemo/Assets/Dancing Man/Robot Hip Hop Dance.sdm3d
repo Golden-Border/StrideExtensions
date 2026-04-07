@@ -1,0 +1,35 @@
+!Model
+Id: a384ddca-9a07-4789-b1b9-7f6a68902946
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Robot Hip Hop Dance.fbx
+Skeleton: 477f16d4-5518-46e1-b42e-62314fa2252b:Dancing Man/Robot Hip Hop Dance Skeleton
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Materials:
+    ce5e7e640ff6973e51cd83a64b4fb1d0:
+        Name: Shoesmat
+        MaterialInstance:
+            Material: 051aec0f-9d4c-49dc-ab36-7d6ec6c1b9bd:Dancing Man/Shoesmat
+    29fefdbe99e20386cf77aefde376e287:
+        Name: Topmat
+        MaterialInstance:
+            Material: 45c023a6-cc5a-4a92-9967-0262757db21f:Dancing Man/Topmat
+    cb3f27efd7b7e629b5b6e4a22f7426c5:
+        Name: Bottommat
+        MaterialInstance:
+            Material: 9c6bee26-fad3-497b-a78a-4a4b260e8324:Dancing Man/Bottommat
+    d50ce56c628d8cb75e27ce6a432e1ad1:
+        Name: Hairmat
+        MaterialInstance:
+            Material: 4ccac9d7-81bd-4437-8230-507aaf6bac22:Dancing Man/Hairmat
+    769baba3fc1e75ab9acc9c524b2d2849:
+        Name: Bodymat
+        MaterialInstance:
+            Material: 33a1f53d-521d-42d4-bd3a-70f149a835c5:Dancing Man/Bodymat
+    2f9076de9cd27e6e017987e95b6025e7:
+        Name: Eyelashmat
+        MaterialInstance:
+            Material: c0ee250e-f4d9-4809-bf41-56ca498b4b19:Dancing Man/Eyelashmat
+Modifiers: {}
+~SourceHashes:
+    81d39e25757608241cc442673e737778~../../Resources/Models/Robot Hip Hop Dance.fbx: b7d66f1b3d9185a2ef8dac1345e482b3

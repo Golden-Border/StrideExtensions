@@ -1,0 +1,8 @@
+!Texture
+Id: 18095c8d-b7e0-4fa4-919b-2c75ab844cd1
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Bottom_Gloss.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

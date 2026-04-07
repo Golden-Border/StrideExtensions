@@ -4,4 +4,5 @@
   </Folder>
   <Project Path="StrideExtensionsDemo.Windows/StrideExtensionsDemo.Windows.csproj" />
   <Project Path="StrideExtensionsDemo/StrideExtensionsDemo.csproj" />
+  <Project Path="StrideOcclusionSilhouette/StrideOcclusionSilhouette.csproj" Id="d13b83cb-a883-4ab0-aa08-644baa5bab00" />
 </Solution>

@@ -1,0 +1,8 @@
+!Texture
+Id: cc6cfb05-b223-41d7-beec-802e75d6d1f5
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Hair_Specular.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

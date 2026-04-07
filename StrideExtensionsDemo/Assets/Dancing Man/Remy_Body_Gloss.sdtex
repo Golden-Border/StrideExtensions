@@ -1,0 +1,8 @@
+!Texture
+Id: 6cc71774-cb14-4d45-a507-d003bc1f426c
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Body_Gloss.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

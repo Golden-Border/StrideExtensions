@@ -1,0 +1,8 @@
+!Texture
+Id: 74a54a34-6647-4611-b517-d2fd42f94320
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Body_Specular.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

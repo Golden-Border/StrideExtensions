@@ -38,6 +38,11 @@ RenderStages:
         Name: GBuffer
         EffectSlotName: GBuffer
         SortMode: !FrontToBackSortMode {}
+    a4ab5940f91c13f18f9899962e37e480*:
+        Id: 01fb8264-35c4-4837-a640-e6eae02e9d4e
+        Name: OcclusionSilhouette
+        EffectSlotName: OcclusionSilhouette
+        SortMode: !FrontToBackSortMode {}
 RenderFeatures:
     d8fb80b0e7995140a46bca8dc36ee8a2: !Stride.Rendering.MeshRenderFeature,Stride.Rendering
         RenderStageSelectors:
@@ -57,6 +62,9 @@ RenderFeatures:
             106341b76db9fcda6a033dad16aa708b: !Stride.Rendering.MeshTransparentRenderStageSelector,Stride.Rendering
                 OpaqueRenderStage: ref!! 490848b8-ecd4-4ae8-8b3c-229069e88f53
                 EffectName: StrideForwardShadingEffect.ShadowMapCaster
+            4a650c55cfd2ea2c362a54d6a3379dd4*: !Stride.Rendering.SimpleGroupToRenderStageSelector,Stride.Rendering
+                RenderStage: ref!! 01fb8264-35c4-4837-a640-e6eae02e9d4e
+                EffectName: OcclusionSilhouetteEffect
         PipelineProcessors:
             d70f5aee0616e4ab25081ceaf643290c: !Stride.Rendering.MeshPipelineProcessor,Stride.Rendering
                 TransparentRenderStage: ref!! 3c86f132-7321-4371-a709-57acb78f8e36
@@ -93,6 +101,9 @@ RenderFeatures:
                         d59ef45dd99e49d3af3887763d153aa7: !Stride.Rendering.Shadows.LightPointShadowMapRendererCubeMap,Stride.Rendering
                             ShadowCasterRenderStage: ref!! f22ed13d-1fbe-4a71-8405-852364b29207
             42be209952db58294c9f06c58809b8ca: !Stride.Rendering.InstancingRenderFeature,Stride.Rendering {}
+            bd521cdc2bea09482ce58b8a07e019ab*: !StrideOcclusionSilhouette.OcclusionSilhouetteRenderFeature,StrideOcclusionSilhouette
+                OpaqueRenderStage: ref!! 9e034adf-f0b4-4fd5-9c83-70016490650e
+                SilhouetteRenderStage: ref!! 01fb8264-35c4-4837-a640-e6eae02e9d4e
     28e9bf54a5adbe063f59fb17acb2723e: !Stride.Rendering.Sprites.SpriteRenderFeature,Stride.Rendering
         RenderStageSelectors:
             d74665cff080638a2439c4422e542d85: !Stride.Rendering.Sprites.SpriteTransparentRenderStageSelector,Stride.Rendering
@@ -215,6 +226,9 @@ Game: !Stride.Rendering.Compositing.SceneCameraRenderer,Stride.Engine
         Children:
             d39c5ddbf8b7d5ca02bafb6496b1cc3c: !Stride.Rendering.Compositing.ForwardRenderer,Stride.Engine ref!! 5faedac1-9b2f-449f-8548-8e5476017fae
             01d338078e9b21121ead0868932613dd: !Stride.Rendering.Compositing.DebugRenderer,Stride.Rendering ref!! 168c3070-6c43-4c94-843b-11c4d72aaf85
+            03ccf180239158727a057d1eb729642f*: !Stride.Rendering.Compositing.SingleStageRenderer,Stride.Rendering
+                Id: 07ad4852-5f03-48ab-9ef4-1197172bcd75
+                RenderStage: ref!! 01fb8264-35c4-4837-a640-e6eae02e9d4e
     RenderMask: All
 SingleView: !Stride.Rendering.Compositing.ForwardRenderer,Stride.Engine ref!! 66ff72bc-e25d-42fc-9963-66210d4e7c07
 Editor: !Stride.Rendering.Compositing.ForwardRenderer,Stride.Engine ref!! 5faedac1-9b2f-449f-8548-8e5476017fae

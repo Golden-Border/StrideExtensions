@@ -1,0 +1,8 @@
+!Texture
+Id: c2ea0fb2-9145-4cea-af0c-423618d94b20
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Top_Diffuse.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

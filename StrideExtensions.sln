@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrideExtensionsDemo.Window
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrideExtensionsDemo", "StrideExtensionsDemo\StrideExtensionsDemo.csproj", "{4E635E7C-0A47-4659-A001-B83652A6D44A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrideOcclusionSilhouette", "StrideOcclusionSilhouette\StrideOcclusionSilhouette.csproj", "{A13ADDFB-3801-AB7D-F1E0-D23BF55393AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4E635E7C-0A47-4659-A001-B83652A6D44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E635E7C-0A47-4659-A001-B83652A6D44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E635E7C-0A47-4659-A001-B83652A6D44A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A13ADDFB-3801-AB7D-F1E0-D23BF55393AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A13ADDFB-3801-AB7D-F1E0-D23BF55393AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A13ADDFB-3801-AB7D-F1E0-D23BF55393AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A13ADDFB-3801-AB7D-F1E0-D23BF55393AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

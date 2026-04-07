@@ -1,0 +1,84 @@
+!Skeleton
+Id: 477f16d4-5518-46e1-b42e-62314fa2252b
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Robot Hip Hop Dance.fbx
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Nodes:
+    7800a1eb08039e7fcc4e6a20fcb15255: {Name: RootNode, Depth: 0}
+    7060e96e83771273be08672e9c899ff6: {Name: Hips, Depth: 1}
+    75a2aa083892626b394be905eaed472d: {Name: Spine, Depth: 2}
+    7fea38a3ffb5e712c36afcff6dbacd0f: {Name: Spine1, Depth: 3}
+    c3ec243b41488cb4c7b5924673cb0f26: {Name: Spine2, Depth: 4}
+    4d50346d6106e44a21dd149b0e94c4d4: {Name: Neck, Depth: 5}
+    b50ea591475da0196b58c5e075588c60: {Name: Head, Depth: 6}
+    27767d82b8a6a51ba3020c566dd46008: {Name: HeadTop_End, Depth: 7}
+    31b440fb400cea6ea338abe2c4f7cdfb: {Name: RightEye, Depth: 7}
+    91565926b499d8583749d6533e2424a8: {Name: LeftEye, Depth: 7}
+    ff71bf2715acbdcb09a30253f550f693: {Name: LeftShoulder, Depth: 5}
+    1f73b18a09785f762456a2767b52da70: {Name: LeftArm, Depth: 6}
+    7020032edb52c994fd3fcddc0922cc23: {Name: LeftForeArm, Depth: 7}
+    12b8bc50e0a5f330a32082ea424b6b32: {Name: LeftHand, Depth: 8}
+    0fb897d464b4ae6284fd34fb6eb0d63e: {Name: LeftHandMiddle1, Depth: 9}
+    4f44657e0bdb21faeb2f20d0a48a6434: {Name: LeftHandMiddle2, Depth: 10}
+    b837377a8a4ba6e54c32522915e63277: {Name: LeftHandMiddle3, Depth: 11}
+    3f8e705ed0806d914261d670a33ea550: {Name: LeftHandMiddle4, Depth: 12}
+    1ccd13f3b0efdf8a0be788e20578c791: {Name: LeftHandThumb1, Depth: 9}
+    08556064ab507c29178d0efe579478ef: {Name: LeftHandThumb2, Depth: 10}
+    b6308d5645ceb55ab0ae3ef78fc95996: {Name: LeftHandThumb3, Depth: 11}
+    8dc2a87dd611377510b38860e07e1891: {Name: LeftHandThumb4, Depth: 12}
+    24dfaefa396506a4746027d4317f9d32: {Name: LeftHandIndex1, Depth: 9}
+    de63dcb03e5dad25ddcbaa277b2e61af: {Name: LeftHandIndex2, Depth: 10}
+    3fe0285b0b7b789c896080a3b75421f5: {Name: LeftHandIndex3, Depth: 11}
+    1fc0a25af280f651882f058a35f799a0: {Name: LeftHandIndex4, Depth: 12}
+    93939920eca4754baf177b677562e14d: {Name: LeftHandRing1, Depth: 9}
+    29c1ba405a065475b575d22a1c86b108: {Name: LeftHandRing2, Depth: 10}
+    8151a7dbcf85070991ad5b52839909d0: {Name: LeftHandRing3, Depth: 11}
+    990086ab0f16d372dfe733dd9e2de20f: {Name: LeftHandRing4, Depth: 12}
+    90a6787669e53edbd1a478a1e6b4dfc3: {Name: LeftHandPinky1, Depth: 9}
+    fd5d6012afb98af2e936c2dbeac13396: {Name: LeftHandPinky2, Depth: 10}
+    5e1ab1c763bdd4c799cb874abbf3e149: {Name: LeftHandPinky3, Depth: 11}
+    b725268c0a430535f25ef1e1cd965978: {Name: LeftHandPinky4, Depth: 12}
+    d942a982fa53b8f974d3cca59b974c85: {Name: RightShoulder, Depth: 5}
+    7f26db9e14c06affda18a2bc838120dd: {Name: RightArm, Depth: 6}
+    99e5446dadc37ff86eacc0d9ece9558c: {Name: RightForeArm, Depth: 7}
+    d53b19c6d8cc81f7d187e28802dc96c2: {Name: RightHand, Depth: 8}
+    778619096c44e65d9a5b43c827bc9419: {Name: RightHandMiddle1, Depth: 9}
+    da06f64356d7ddffee2ed476340ce141: {Name: RightHandMiddle2, Depth: 10}
+    345f5485b55b5e51eceeea951129135f: {Name: RightHandMiddle3, Depth: 11}
+    34f154fedac0b7e20664ed86c7e95674: {Name: RightHandMiddle4, Depth: 12}
+    5d5ae35a5b3ce3d78f12727a0a6f3c2a: {Name: RightHandThumb1, Depth: 9}
+    57233923e5f3c24b2635fc121b080592: {Name: RightHandThumb2, Depth: 10}
+    9db273fb838d7982edd461a8fa0b3e08: {Name: RightHandThumb3, Depth: 11}
+    0dd2e1c7a433205b091cc410b08d4dee: {Name: RightHandThumb4, Depth: 12}
+    b44290ec3c2308ffc58b3729a49b7b63: {Name: RightHandIndex1, Depth: 9}
+    8830c41d97b4e6099af5bc831d996821: {Name: RightHandIndex2, Depth: 10}
+    d2e946a9cc886c3a1e65e38086e840a3: {Name: RightHandIndex3, Depth: 11}
+    c4b8fee77b7385351b47cec8b70cac90: {Name: RightHandIndex4, Depth: 12}
+    af859575f71c576255f05aacd47d522a: {Name: RightHandRing1, Depth: 9}
+    0578661b617d34247b8c8d6acac6f6d6: {Name: RightHandRing2, Depth: 10}
+    04655ce376dd1363f991a06d162a7855: {Name: RightHandRing3, Depth: 11}
+    6b4ae0f25f13656270f3ac5f5b7eae4a: {Name: RightHandRing4, Depth: 12}
+    dc36d95cada2dec1fa88da4dd1e06144: {Name: RightHandPinky1, Depth: 9}
+    f76c5ceeee8cd0c50924b9e7c306c4a6: {Name: RightHandPinky2, Depth: 10}
+    e3f15a91a666fde6be9576db7fbf8dd5: {Name: RightHandPinky3, Depth: 11}
+    f2820ac1c5aa1e067ddd1071867bf658: {Name: RightHandPinky4, Depth: 12}
+    6bbe8f6a8ec8e92c05e18531ce115093: {Name: LeftUpLeg, Depth: 2}
+    0f628d1b32cb4653e4376d1e83192d74: {Name: LeftLeg, Depth: 3}
+    1feea1247caa56286109884c847d9fde: {Name: LeftFoot, Depth: 4}
+    6df1605556e03cf5dbdb734c8d2d1454: {Name: LeftToeBase, Depth: 5}
+    d434cee5b1364cd2fc045fd3e2dc6214: {Name: LeftToe_End, Depth: 6}
+    c68a2f13dc51d0e0b43f8d64d4f7f241: {Name: RightUpLeg, Depth: 2}
+    e404e599b28af63da3acc5e2eee59221: {Name: RightLeg, Depth: 3}
+    5be5521a5d8c4c59e493b93f936fadbb: {Name: RightFoot, Depth: 4}
+    925ee8e81e260ff97c39906a0de75a0c: {Name: RightToeBase, Depth: 5}
+    2110ed990c60a22072a121ed4421b936: {Name: RightToe_End, Depth: 6}
+    a55c1af562647f943eab5446ccaa3cf9: {Name: Shoes, Depth: 1}
+    1f0cc777f8f3a5ca18d4783efa319cd2: {Name: Tops, Depth: 1}
+    bb174bb570be57081d30a9fa506f8bc9: {Name: Bottoms, Depth: 1}
+    d323c34d111954effafc647591db5dcb: {Name: Hair, Depth: 1}
+    efe3ad96e238d606daba723aaaa1cdfc: {Name: Body, Depth: 1}
+    58487dc8d8708878c821bf9cec647e53: {Name: Eyelashes, Depth: 1}
+    039d3811c0cdafdbc39f9a6b930d9926: {Name: Eyes, Depth: 1}
+~SourceHashes:
+    b37ec9214e7532371582925d9de6cc84~../../Resources/Models/Robot Hip Hop Dance.fbx: b7d66f1b3d9185a2ef8dac1345e482b3

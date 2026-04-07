@@ -1,0 +1,25 @@
+// Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net)
+// Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
+
+namespace OcclusionSilhouette
+{
+    /// <summary>
+    /// Outputs a flat silhouette color with a subtle animated pulse.
+    /// Used by OcclusionSilhouetteEffect for occluded-geometry rendering.
+    /// </summary>
+    shader OcclusionSilhouetteShader : ShaderBase, Global
+    {
+        cbuffer PerDraw
+        {
+            [Color]
+            stage float4 SilhouetteColor;
+        }
+
+        stage override void PSMain()
+        {
+            // Subtle pulse for visual polish
+            float pulse = 0.85 + 0.15 * sin(Global.Time * 3.0);
+            streams.ColorTarget = float4(SilhouetteColor.rgb * pulse, SilhouetteColor.a);
+        }
+    };
+}

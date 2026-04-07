@@ -1,0 +1,8 @@
+!Texture
+Id: 2bfd12da-9692-4c53-8cd8-8066f002cc93
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Shoes_Diffuse.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

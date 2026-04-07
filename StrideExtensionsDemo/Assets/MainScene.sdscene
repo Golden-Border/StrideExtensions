@@ -8,9 +8,12 @@ Hierarchy:
     RootParts:
         - ref!! c63073eb-99c9-4845-adaf-f195c4c30fde
         - ref!! d653488e-3719-45e2-9a7c-3fa3a551c9b7
+        - ref!! 904abe2a-ca6e-411f-9407-4cb27d9b9dbf
         - ref!! a37befa7-c43b-4dea-a418-85f07043aba6
         - ref!! 304dde10-1ec8-44c5-a4bf-af5a34043387
         - ref!! 37e9b118-b7cd-470e-b15c-bce3e215c68e
+        - ref!! 80ac94b9-1208-4fd2-8754-c4404f166d5e
+        - ref!! 58626d31-8c11-4798-8230-f9e1dc8d57e4
     Parts:
         -   Entity:
                 Id: 304dde10-1ec8-44c5-a4bf-af5a34043387
@@ -40,6 +43,63 @@ Hierarchy:
                         Id: 67e910cb-5c3e-435d-bb54-4a28f538ce48
                         Model: 0ec822c2-e882-4efe-ba57-832600a0b124:Sphere
                         Materials: {}
+        -   Entity:
+                Id: 58626d31-8c11-4798-8230-f9e1dc8d57e4
+                Name: Cube
+                Components:
+                    22745959f70578a2ca2acd6536e06628: !TransformComponent
+                        Id: ccdd76b6-5a89-4080-ba68-a7a7353935d1
+                        Position: {X: -1.0841528, Y: 0.69462645, Z: 0.97872716}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    89b2e86b5eac4b198636b4b271656895: !ModelComponent
+                        Id: 5eedb64a-616e-4309-9ec3-a089dac0b583
+                        Model: b0c5a27a-0fe2-4693-8a2e-1133a2db6662:Cube
+                        Materials: {}
+                    d894c326494e6fd374f6d2b7f1b76862: !OcclusionSilhouetteComponent
+                        Id: ed3e8db6-2426-485c-b31d-00ec36ed072f
+                        SilhouetteColor: {R: 0.0, G: 0.75, B: 1.0, A: 0.6}
+        -   Entity:
+                Id: 80ac94b9-1208-4fd2-8754-c4404f166d5e
+                Name: Robot Hip Hop Dance
+                Components:
+                    af8b7f7ba454d9f2462004e258db3f5c: !TransformComponent
+                        Id: 031a3bb8-8c70-424a-8101-25a64079d2d4
+                        Position: {X: -1.0958892, Y: 0.0, Z: -0.6290373}
+                        Rotation: {X: 0.0, Y: 0.70710677, Z: 0.0, W: 0.70710677}
+                        Scale: {X: 0.3, Y: 0.3, Z: 0.3}
+                        Children: {}
+                    238378b155d4a5fa547376e823ba7a74: !ModelComponent
+                        Id: 2198f42b-478f-4cab-99af-d44d7a377307
+                        Model: a384ddca-9a07-4789-b1b9-7f6a68902946:Dancing Man/Robot Hip Hop Dance
+                        Materials: {}
+                    3f7bd3933a87513ca43644057d7aad6a: !AnimationComponent
+                        Id: 0e80c6a8-7e6b-4d21-ad4a-81e28752dba0
+                        Animations:
+                            cafa0e2aeffdf339cd28fa0b222b031a~Dance: 3538dc7f-5380-4af2-8190-e22283c78cf9:Dancing Man/Robot Hip Hop Dance_mixamo.com
+                    dd03492202df709703482a1e1510457e: !StrideExtensionsDemo.StartAnimation,StrideExtensionsDemo
+                        Id: 077037b5-c7bf-4fbe-81e1-9f9fa9fa4b20
+                        AnimationComponent: ref!! 0e80c6a8-7e6b-4d21-ad4a-81e28752dba0
+                        AnimationName: Dance
+                    47d895a7917dc9298270285e0efdc4d5: !OcclusionSilhouetteComponent
+                        Id: 436e4ccd-9cd3-47fb-8928-967e9d84c7ae
+                        SilhouetteColor: {R: 0.17499995, G: 1.0, B: 0.0, A: 0.6}
+        -   Entity:
+                Id: 904abe2a-ca6e-411f-9407-4cb27d9b9dbf
+                Name: Ambient light
+                Components:
+                    ae768a702c5b1c9be3e464343f48eb65: !TransformComponent
+                        Id: 6e951765-0452-451a-b197-7bcc19f62401
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    9f7aa5731f8883232ae2e0e035a7b2e6: !LightComponent
+                        Id: 4eb0bc05-3e86-4cac-b3d9-faa5a8151514
+                        Type: !LightAmbient
+                            Color: !ColorRgbProvider
+                                Value: {R: 1.0, G: 1.0, B: 1.0}
         -   Entity:
                 Id: a37befa7-c43b-4dea-a418-85f07043aba6
                 Name: Skybox
@@ -88,14 +148,14 @@ Hierarchy:
                     63e0ddb8aa9487c75c593439703b8734: !TransformComponent
                         Id: 5b99b29e-14dc-46db-8e18-7199672e838a
                         Position: {X: 0.0, Y: 2.0, Z: 0.0}
-                        Rotation: {X: 1.131334E-08, Y: -0.9659258, Z: -0.25881904, W: -4.222196E-08}
+                        Rotation: {X: 0.026301533, Y: -0.96092534, Z: -0.25747916, W: -0.09815864}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     416e6336046e6ed1ecd9d1cc68f254d9: !LightComponent
                         Id: a429b682-1572-4f9d-b187-7dd8d5924c3a
                         Type: !LightDirectional
                             Color: !ColorRgbProvider
-                                Value: {R: 1.0, G: 1.0, B: 1.0}
+                                Value: {R: 0.95686275, G: 0.9137255, B: 0.60784316}
                             Shadow:
                                 Enabled: true
                                 Filter: !LightShadowMapFilterTypePcf
@@ -105,4 +165,4 @@ Hierarchy:
                                 PartitionMode: !LightDirectionalShadowMap.PartitionLogarithmic {}
                                 ComputeTransmittance: false
                                 BiasParameters: {}
-                        Intensity: 20.0
+                        Intensity: 5.0

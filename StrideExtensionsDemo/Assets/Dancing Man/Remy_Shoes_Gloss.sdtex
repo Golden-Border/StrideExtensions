@@ -1,0 +1,8 @@
+!Texture
+Id: 64cc2203-d0bb-40e1-87c9-4b43ec121c69
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Shoes_Gloss.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

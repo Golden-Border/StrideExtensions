@@ -1,0 +1,8 @@
+!Texture
+Id: 3ce9d278-9f87-45a1-ba36-f80256b4faed
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Top_Gloss.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

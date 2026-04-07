@@ -1,0 +1,8 @@
+!Texture
+Id: 411d115a-6e90-4a40-ba75-c9836cc7a3d7
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Remy_Body_Normal.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

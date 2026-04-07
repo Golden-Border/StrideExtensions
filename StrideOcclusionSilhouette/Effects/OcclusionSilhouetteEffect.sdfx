@@ -1,0 +1,52 @@
+// Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net)
+// Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
+
+using Stride.Rendering.Data;
+using Stride.Rendering.Materials;
+
+namespace OcclusionSilhouette
+{
+    /// <summary>
+    /// Effect for rendering a flat-colored silhouette of occluded geometry.
+    /// Includes transformation and conditional skinning support for animated objects.
+    /// </summary>
+    effect OcclusionSilhouetteEffect
+    {
+        using params MaterialKeys;
+        using params StrideEffectBaseKeys;
+
+        // Base shader
+        mixin ShaderBase;
+
+        // Transformation pipeline
+        mixin TransformationBase;
+
+        if (StrideEffectBaseKeys.HasInstancing)
+        {
+            mixin macro StrideEffectBaseKeys.ModelTransformUsage;
+            mixin TransformationWAndVPInstanced;
+        }
+        else
+        {
+            mixin TransformationWAndVP;
+        }
+
+        // Skinning support for animated (skeletal) objects
+        if (MaterialKeys.HasSkinningPosition)
+        {
+            mixin macro MaterialKeys.SkinningMaxBones;
+
+            if (StrideEffectBaseKeys.HasInstancing)
+            {
+                mixin TransformationSkinningInstanced;
+            }
+            else
+            {
+                mixin TransformationSkinning;
+            }
+        }
+
+        // Flat color output with subtle pulse
+        mixin OcclusionSilhouetteShader;
+    };
+}
