@@ -4,6 +4,8 @@ Renders a flat-colored silhouette for entities that are hidden behind other geom
 
 Self-occlusion is suppressed via the stencil buffer: the entity's own pixels are marked during the opaque pass and excluded during the silhouette pass.
 
+![Occlusion Silhouette](docs/img/OcclusionSilhouette.png)
+
 ## Setup
 
 ### 1. Graphics Compositor
