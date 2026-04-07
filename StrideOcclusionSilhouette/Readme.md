@@ -31,7 +31,7 @@ Locate and select the `MeshRenderFeature` in the render feature section.
 | ------------ | ----------------------------- |
 | Render Group | `All` (or restrict as needed) |
 | Render Stage | _(the stage created above)_   |
-| Effect NAme  | `OcclusionSilhouetteEffect`   |
+| Effect Name  | `OcclusionSilhouetteEffect`   |
 
 **Add the render feature** to `MeshRenderFeature → Render Features`:
 
