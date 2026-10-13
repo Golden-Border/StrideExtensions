@@ -19,8 +19,6 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>stride;stride3d;gamedev;silhouette;rendering;extension</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <!-- CA2255 fires on Stride's auto-generated ModuleInitializer in obj/ which we cannot modify -->
-    <NoWarn>$(NoWarn);CA2255</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,10 +38,13 @@
   </ItemGroup>
 
   <!-- Shader files are placed next to the .targets file so $(MSBuildThisFileDirectory)
-       in the .targets resolves to their correct location in the NuGet package cache. -->
+       in the .targets resolves to their correct location in the NuGet package cache.
+       They are packed as Content because Stride 4.4 removes all *.sdsl/*.sdfx from the None items
+       (Stride.Shaders.Compilers.targets turns them into AdditionalFiles for its source generator),
+       which would silently drop them from the package. -->
   <ItemGroup>
-    <None Include="Effects\**\*.sdsl;Effects\**\*.sdfx"
-          Pack="true" PackagePath="build\Effects\" />
+    <Content Include="Effects\**\*.sdsl;Effects\**\*.sdfx"
+             Pack="true" PackagePath="build\Effects\" />
   </ItemGroup>
 
 </Project>

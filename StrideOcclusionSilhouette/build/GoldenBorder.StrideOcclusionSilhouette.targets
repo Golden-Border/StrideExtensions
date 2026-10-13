@@ -11,8 +11,7 @@
   -->
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Effects\**\*.sdsl"
-          Link="Effects\%(RecursiveDir)%(Filename)%(Extension)"
-          Generator="StrideShaderKeyGenerator" />
+          Link="Effects\%(RecursiveDir)%(Filename)%(Extension)" />
     <None Include="$(MSBuildThisFileDirectory)Effects\**\*.sdfx"
           Link="Effects\%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>

@@ -1,3 +1,4 @@
+using OcclusionSilhouette;
 using Stride.Core;
 using Stride.Core.Mathematics;
 using Stride.Engine;
@@ -154,7 +155,7 @@ public class OcclusionSilhouetteRenderFeature : SubRenderFeature
         {
             if (SilhouetteRenderStage != null && renderNode.RenderStage == SilhouetteRenderStage)
             {
-                pipelineState.BlendState.RenderTarget0.ColorWriteChannels = ColorWriteChannels.None;
+                pipelineState.BlendState.RenderTargets[0].ColorWriteChannels = ColorWriteChannels.None;
             }
             return;
         }

@@ -1,11 +1,11 @@
 <Project>
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <StrideVersion>4.3.0.2507</StrideVersion>
+    <StrideVersion>4.4.0</StrideVersion>
   </PropertyGroup>
 
   <ItemGroup Label="Stride">
-    <PackageVersion Include="Stride.Core.Assets.CompilerApp" Version="$(StrideVersion)" />
+    <PackageVersion Include="Stride.AssetCompiler"           Version="$(StrideVersion)" />
     <PackageVersion Include="Stride.Engine"                  Version="$(StrideVersion)" />
     <PackageVersion Include="Stride.Navigation"              Version="$(StrideVersion)" />
     <PackageVersion Include="Stride.Particles"               Version="$(StrideVersion)" />
