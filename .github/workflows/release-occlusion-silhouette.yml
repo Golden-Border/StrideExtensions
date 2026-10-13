@@ -27,6 +27,13 @@ jobs:
           -p:Version=${{ inputs.version }}
           --output ./nupkg
 
+      # Stride's build targets can silently drop the shader files from the package.
+      - name: Verify shaders are packed
+        run: |
+          unzip -l ./nupkg/*.nupkg
+          unzip -l ./nupkg/*.nupkg | grep -q 'build/Effects/OcclusionSilhouetteShader.sdsl'
+          unzip -l ./nupkg/*.nupkg | grep -q 'build/Effects/OcclusionSilhouetteEffect.sdfx'
+
       - name: Push to NuGet.org
         run: >
           dotnet nuget push ./nupkg/*.nupkg
