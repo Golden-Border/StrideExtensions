@@ -1,0 +1,7 @@
+!Texture
+Id: b5ef07ec-43e1-423b-bcc8-0bfa242cc38f
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Textures/Sign_Diffuse.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}

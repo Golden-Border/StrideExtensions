@@ -1,0 +1,31 @@
+!MaterialAsset
+Id: 7a82ce81-e053-4f6e-8a7b-47dcf11923cf
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Attributes:
+    Surface: !MaterialNormalMapFeature
+        NormalMap: !ComputeTextureColor
+            Texture: b698d9fe-70aa-4ff7-aef1-d0c574638d0b:Alpha Sign/Sign Normal
+            FallbackValue:
+                Value: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
+            Scale: {X: 1.0, Y: 1.0}
+            Offset: {X: 0.0, Y: 0.0}
+            Swizzle: null
+    Diffuse: !MaterialDiffuseMapFeature
+        DiffuseMap: !ComputeTextureColor
+            Texture: b5ef07ec-43e1-423b-bcc8-0bfa242cc38f:Alpha Sign/Sign Diffuse
+            FallbackValue:
+                Value: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
+            Scale: {X: 1.0, Y: 1.0}
+            Offset: {X: 0.0, Y: 0.0}
+            Swizzle: null
+    DiffuseModel: !MaterialDiffuseLambertModelFeature {}
+    Transparency: !MaterialTransparencyBlendFeature
+        Alpha: !ComputeFloat
+            Value: 1.0
+        Tint: !ComputeColor
+            Value: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
+        DitheredShadows: true
+    Overrides:
+        UVScale: {X: 1.0, Y: 1.0}
+Layers: {}

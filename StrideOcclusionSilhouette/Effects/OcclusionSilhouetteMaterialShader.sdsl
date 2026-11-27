@@ -1,0 +1,37 @@
+// Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net)
+// Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
+
+namespace OcclusionSilhouette
+{
+    /// <summary>
+    /// Silhouette for materials whose shape lies in their alpha (alpha blend or alpha cutoff).
+    /// Runs the material's pixel chain and covers as much of each pixel as the material does,
+    /// so the silhouette takes the shape the material shows.
+    /// Used by OcclusionSilhouetteEffect together with the material's pixel stage.
+    /// </summary>
+    shader OcclusionSilhouetteMaterialShader : OcclusionSilhouetteShader, ShadingBase, MaterialPixelShadingStream, NormalUpdate
+    {
+        cbuffer PerDraw
+        {
+            /// <summary>
+            /// 1 when the material blends with its alpha, 0 when it only cuts pixels off.
+            /// Set per draw by OcclusionSilhouetteRenderFeature.
+            /// </summary>
+            stage float SilhouetteUsesMaterialAlpha;
+        }
+
+        stage override float ComputeCoverage()
+        {
+            // Normal-mapped materials read streams.tangentToWorld in their chain; it is only produced here
+            GenerateNormal_PS();
+
+            // Run the material chain. It leaves the material's opacity in shadingColorAlpha;
+            // alpha-cutoff materials discard their cut-off pixels on the way.
+            this.Shading();
+
+            // Alpha-blended materials cover as much as their alpha says (soft edges stay soft).
+            // Cutoff materials draw opaque, so they cover fully wherever they were not discarded.
+            return lerp(1.0, saturate(streams.shadingColorAlpha), SilhouetteUsesMaterialAlpha);
+        }
+    };
+}

@@ -32,6 +32,7 @@ jobs:
         run: |
           unzip -l ./nupkg/*.nupkg
           unzip -l ./nupkg/*.nupkg | grep -q 'build/Effects/OcclusionSilhouetteShader.sdsl'
+          unzip -l ./nupkg/*.nupkg | grep -q 'build/Effects/OcclusionSilhouetteMaterialShader.sdsl'
           unzip -l ./nupkg/*.nupkg | grep -q 'build/Effects/OcclusionSilhouetteEffect.sdfx'
 
       - name: Push to NuGet.org
