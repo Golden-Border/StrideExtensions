@@ -11,7 +11,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write   # push the release tag
+      id-token: write   # GitHub OIDC token for NuGet trusted publishing
 
     steps:
       - uses: actions/checkout@v4
@@ -35,11 +36,20 @@ jobs:
           unzip -l ./nupkg/*.nupkg | grep -q 'build/Effects/OcclusionSilhouetteMaterialShader.sdsl'
           unzip -l ./nupkg/*.nupkg | grep -q 'build/Effects/OcclusionSilhouetteEffect.sdfx'
 
+      # Trusted publishing: exchanges the job's OIDC token for a NuGet API key that is valid for one hour.
+      # Needs a trusted publishing policy on nuget.org for this repository and workflow file,
+      # and the secret NUGET_USER with the nuget.org profile name (not the email address).
+      - name: NuGet login
+        id: nuget-login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
       - name: Push to NuGet.org
         run: >
           dotnet nuget push ./nupkg/*.nupkg
           --source https://api.nuget.org/v3/index.json
-          --api-key ${{ secrets.NUGET_API_KEY }}
+          --api-key ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
           --skip-duplicate
 
       - name: Tag commit
