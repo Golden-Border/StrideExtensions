@@ -1,0 +1,14 @@
+!ProceduralModelAsset
+Id: 6abac4eb-0d8e-4b78-ab07-626800d25b2b
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: !PlaneProceduralModel
+    Size: {X: 1.0, Y: 1.0}
+    Tessellation: {X: 1, Y: 1}
+    Normal: UpZ
+    Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+    UvScale: {X: 1.0, Y: 1.0}
+    LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+    NumberOfTextureCoordinates: 10
+    MaterialInstance:
+        Material: 7a82ce81-e053-4f6e-8a7b-47dcf11923cf:Alpha Sign/Sign Material

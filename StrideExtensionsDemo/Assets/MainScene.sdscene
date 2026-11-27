@@ -14,6 +14,8 @@ Hierarchy:
         - ref!! 37e9b118-b7cd-470e-b15c-bce3e215c68e
         - ref!! 80ac94b9-1208-4fd2-8754-c4404f166d5e
         - ref!! 58626d31-8c11-4798-8230-f9e1dc8d57e4
+        - ref!! b5361e28-07c5-4646-80e6-6dfc257194f8
+        - ref!! a6189ed9-4241-46ca-8ab6-bec785db7f68
     Parts:
         -   Entity:
                 Id: 304dde10-1ec8-44c5-a4bf-af5a34043387
@@ -85,6 +87,37 @@ Hierarchy:
                     47d895a7917dc9298270285e0efdc4d5: !OcclusionSilhouetteComponent
                         Id: 436e4ccd-9cd3-47fb-8928-967e9d84c7ae
                         SilhouetteColor: {R: 0.17499995, G: 1.0, B: 0.0, A: 0.6}
+        -   Entity:
+                Id: a6189ed9-4241-46ca-8ab6-bec785db7f68
+                Name: Alpha Sign
+                Components:
+                    43b4263d929a469abf9340eae61dc747: !TransformComponent
+                        Id: ad951530-6f2a-4030-a7c9-2039e640487e
+                        Position: {X: -0.674, Y: 0.75, Z: 2.108}
+                        Rotation: {X: 0.0, Y: 0.82903755, Z: 0.0, W: 0.5591929}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    de3319bd91954611859cda608a90daa2: !ModelComponent
+                        Id: edc999c3-1e7e-4306-b91a-20cb2dfdc256
+                        Model: 6abac4eb-0d8e-4b78-ab07-626800d25b2b:Alpha Sign/Sign
+                        Materials: {}
+                    eb98df20bee54b378bf4029b7657e2b1: !OcclusionSilhouetteComponent
+                        Id: bc40fef8-8fad-4c07-8d90-b785a22fbbe4
+                        SilhouetteColor: {R: 1.0, G: 0.2, B: 0.8, A: 0.7}
+        -   Entity:
+                Id: b5361e28-07c5-4646-80e6-6dfc257194f8
+                Name: Wall
+                Components:
+                    fcd44f537ca8444a879fcd1e9b419452: !TransformComponent
+                        Id: 61d7140c-506d-44b9-a921-160bb800d042
+                        Position: {X: 0.878, Y: 0.6, Z: 1.144}
+                        Rotation: {X: 0.0, Y: 0.82903755, Z: 0.0, W: 0.5591929}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    39ddcf74f7584028b5684d2b103cedb5: !ModelComponent
+                        Id: c53b7a5e-ad24-445f-8801-b45642021b41
+                        Model: 653e827f-8e6c-4d2e-bc3f-be52a6600fe1:Alpha Sign/Wall
+                        Materials: {}
         -   Entity:
                 Id: 904abe2a-ca6e-411f-9407-4cb27d9b9dbf
                 Name: Ambient light

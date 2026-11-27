@@ -34,11 +34,18 @@ namespace StrideOcclusionSilhouette;
 /// Skinned/animated objects are supported via the <c>OcclusionSilhouetteEffect.sdfx</c> which conditionally includes
 /// the <c>TransformationSkinning</c> mixin.
 /// </para>
+/// <para>
+/// Materials whose shape lies in their alpha (blend, additive or cutoff transparency, hair shading) run their pixel stage
+/// in the silhouette pass, so the silhouette takes the shape the material shows. Per draw, this feature tells the shader
+/// whether the material blends (the silhouette covers as much as the alpha) or only cuts pixels off (the silhouette covers
+/// fully where drawn).
+/// </para>
 /// </remarks>
 [Display("Occlusion Silhouette")]
 public class OcclusionSilhouetteRenderFeature : SubRenderFeature
 {
     private ConstantBufferOffsetReference colorCBufferSlot;
+    private ConstantBufferOffsetReference usesMaterialAlphaCBufferSlot;
     private ObjectPropertyKey<Color4> silhouetteColorKey;
 
     /// <summary>
@@ -113,6 +120,15 @@ public class OcclusionSilhouetteRenderFeature : SubRenderFeature
             var mappedCB = renderNode.Resources.ConstantBuffer.Data;
             var perDraw = (Color4*)((byte*)mappedCB + colorOffset);
             *perDraw = storedColor;
+
+            // Only effects running the material's pixel chain have this slot (materials whose shape lies in their alpha).
+            // Blended materials cover as much as their alpha; cutoff materials draw opaque and only discard.
+            var usesMaterialAlphaOffset = perDrawLayout.GetConstantBufferOffset(usesMaterialAlphaCBufferSlot);
+            if (usesMaterialAlphaOffset != -1)
+            {
+                var hasTransparency = ((RenderMesh)renderNode.RenderObject).MaterialPass?.HasTransparency == true;
+                *(float*)((byte*)mappedCB + usesMaterialAlphaOffset) = hasTransparency ? 1f : 0f;
+            }
         }
     }
 
@@ -210,5 +226,7 @@ public class OcclusionSilhouetteRenderFeature : SubRenderFeature
         silhouetteColorKey = RootRenderFeature.RenderData.CreateObjectKey<Color4>();
         colorCBufferSlot = ((RootEffectRenderFeature)RootRenderFeature)
             .CreateDrawCBufferOffsetSlot(OcclusionSilhouetteShaderKeys.SilhouetteColor.Name);
+        usesMaterialAlphaCBufferSlot = ((RootEffectRenderFeature)RootRenderFeature)
+            .CreateDrawCBufferOffsetSlot(OcclusionSilhouetteMaterialShaderKeys.SilhouetteUsesMaterialAlpha.Name);
     }
 }

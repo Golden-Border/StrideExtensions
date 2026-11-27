@@ -11,7 +11,7 @@
     <PackageId>GoldenBorder.StrideOcclusionSilhouette</PackageId>
     <Version>1.0.0-rc.1</Version>
     <Authors>Golden Border</Authors>
-    <Description>Renders a flat-colored silhouette for entities hidden behind other geometry in Stride. Supports animated and skinned meshes.</Description>
+    <Description>Renders a flat-colored silhouette for entities hidden behind other geometry in Stride. Supports animated and skinned meshes and follows the shape of alpha-blended and alpha-cutoff materials.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/Golden-Border/StrideExtensions</PackageProjectUrl>

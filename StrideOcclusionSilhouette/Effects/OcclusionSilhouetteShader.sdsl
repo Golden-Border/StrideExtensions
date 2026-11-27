@@ -19,7 +19,19 @@ namespace OcclusionSilhouette
         {
             // Subtle pulse for visual polish
             float pulse = 0.85 + 0.15 * sin(Global.Time * 3.0);
-            streams.ColorTarget = float4(SilhouetteColor.rgb * pulse, SilhouetteColor.a);
+
+            // The pass blends premultiplied (One / InvSrcAlpha). Scaling color and alpha together
+            // by the coverage leaves the pixel untouched where the silhouette does not cover it.
+            streams.ColorTarget = float4(SilhouetteColor.rgb * pulse, SilhouetteColor.a) * ComputeCoverage();
+        }
+
+        /// <summary>
+        /// How much of the pixel the silhouette covers, from 0 (nothing) to 1 (fully).
+        /// A flat silhouette covers the whole geometry.
+        /// </summary>
+        stage float ComputeCoverage()
+        {
+            return 1.0;
         }
     };
 }

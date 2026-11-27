@@ -9,44 +9,74 @@ namespace OcclusionSilhouette
     /// <summary>
     /// Effect for rendering a flat-colored silhouette of occluded geometry.
     /// Includes transformation and conditional skinning support for animated objects.
+    /// For materials whose shape lies in their alpha (alpha blend, alpha cutoff) the material's
+    /// pixel chain runs as well, so the silhouette takes the shape the material shows.
     /// </summary>
     effect OcclusionSilhouetteEffect
     {
         using params MaterialKeys;
         using params StrideEffectBaseKeys;
 
-        // Base shader
-        mixin ShaderBase;
+        ShaderSource materialPixelStageSurfaceShaders = MaterialKeys.PixelStageSurfaceShaders;
 
-        // Transformation pipeline
-        mixin TransformationBase;
-
-        if (StrideEffectBaseKeys.HasInstancing)
+        // Materials that need their pixel shader in depth-only passes (blend, additive and cutoff transparency,
+        // hair shading) set UsePixelShaderWithDepthPass: their shape is only known after their pixel chain has run.
+        if (MaterialKeys.UsePixelShaderWithDepthPass && materialPixelStageSurfaceShaders != null)
         {
-            mixin macro StrideEffectBaseKeys.ModelTransformUsage;
-            mixin TransformationWAndVPInstanced;
+            // Same vertex setup as the forward shading effect: transformation, instancing, skinning,
+            // normal mapping, material vertex stage and tessellation
+            mixin StrideEffectBase;
+
+            // Material pixel chain, composed as in StrideForwardShadingEffect. No light groups are
+            // composed, so no light is evaluated: only the material's alpha is used.
+            mixin MaterialSurfacePixelStageCompositor;
+            mixin compose materialPixelStage = (materialPixelStageSurfaceShaders);
+            mixin compose streamInitializerPixelStage = MaterialKeys.PixelStageStreamInitializer;
+
+            ShaderSource extensionPixelStageSurfaceFilter = MaterialKeys.PixelStageSurfaceFilter;
+            if (extensionPixelStageSurfaceFilter != null)
+            {
+                mixin (extensionPixelStageSurfaceFilter);
+            }
+
+            // Flat color output with subtle pulse, covering as much as the material does
+            mixin OcclusionSilhouetteMaterialShader;
         }
         else
         {
-            mixin TransformationWAndVP;
-        }
+            // Base shader
+            mixin ShaderBase;
 
-        // Skinning support for animated (skeletal) objects
-        if (MaterialKeys.HasSkinningPosition)
-        {
-            mixin macro MaterialKeys.SkinningMaxBones;
+            // Transformation pipeline
+            mixin TransformationBase;
 
             if (StrideEffectBaseKeys.HasInstancing)
             {
-                mixin TransformationSkinningInstanced;
+                mixin macro StrideEffectBaseKeys.ModelTransformUsage;
+                mixin TransformationWAndVPInstanced;
             }
             else
             {
-                mixin TransformationSkinning;
+                mixin TransformationWAndVP;
             }
-        }
 
-        // Flat color output with subtle pulse
-        mixin OcclusionSilhouetteShader;
+            // Skinning support for animated (skeletal) objects
+            if (MaterialKeys.HasSkinningPosition)
+            {
+                mixin macro MaterialKeys.SkinningMaxBones;
+
+                if (StrideEffectBaseKeys.HasInstancing)
+                {
+                    mixin TransformationSkinningInstanced;
+                }
+                else
+                {
+                    mixin TransformationSkinning;
+                }
+            }
+
+            // Flat color output with subtle pulse
+            mixin OcclusionSilhouetteShader;
+        }
     };
 }
